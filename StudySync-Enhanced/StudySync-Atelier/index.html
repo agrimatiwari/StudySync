@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="theme-color" content="#263C32">
+<meta name="description" content="StudySync — your academic workspace for tasks, focus, planning and exams.">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>StudySync · Atelier</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+<aside id="side"></aside>
+<main id="main"></main>
+<button id="fab" data-a="capture" title="Quick capture" aria-label="Quick capture"></button>
+<dialog id="dlg">
+  <form id="frm" novalidate>
+    <div class="dh"><h3 id="ft"></h3><button type="button" class="ib" data-a="cancel" aria-label="Close">✕</button></div>
+    <div id="ff"></div>
+    <p id="fe" class="acc"></p>
+    <div class="end">
+      <button type="button" class="btn" data-a="cancel">Cancel</button>
+      <button class="btn pri">Save</button>
+    </div>
+  </form>
+</dialog>
+<div id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
