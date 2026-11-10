@@ -109,7 +109,7 @@ const spark=(v,c)=>{const mx=Math.max(1,...v);return`<svg class="sp" viewBox="0 
 const ringS=(p,c,label,sub,sz=96)=>`<div class="rg" style="width:${sz}px;height:${sz}px"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" class="rb2"/><circle cx="50" cy="50" r="42" class="rf2" stroke="${c}" stroke-dasharray="263.9" stroke-dashoffset="${263.9*(1-Math.min(1,Math.max(0,p)))}" transform="rotate(-90 50 50)"/></svg><div><b>${label}</b><span>${sub}</span></div></div>`;
 function vDash(){
  const t0=today(),P=S.tasks.filter(t=>!t.done),wk=wkStart(t0),lw=addD(wk,-7),h=new Date().getHours(),nm=S.prefs.name;
- const g=(h<12?'Good morning':h<18?'Good afternoon':'Good evening')+(nm?`, ${esc(nm)}`:''),dueT=P.filter(t=>dd(t.due)===0),od=P.filter(t=>dd(t.due)<0),d7=P.filter(t=>dd(t.due)>=0&&dd(t.due)<=7);
+ const g='Hello'+(nm?`,${esc(nm)}`:''),dueT=P.filter(t=>dd(t.due)===0),od=P.filter(t=>dd(t.due)<0),d7=P.filter(t=>dd(t.due)>=0&&dd(t.due)<=7);
  const ses=S.sessions.filter(s=>s.date===t0).sort((a,b)=>mins(a.time)-mins(b.time)),nx=nextExam(),L=loads(),W=wlSum(L);
  const wm=sum(S.focus.filter(f=>f.date>=wk)),lm=sum(S.focus.filter(f=>f.date>=lw&&f.date<wk)),doneW=S.tasks.filter(t=>t.done&&t.doneOn>=wk).length;
  const doneT=S.tasks.filter(t=>t.done&&t.doneOn===t0).length,sesDone=ses.filter(s=>s.done).length,totalT=ses.length+dueT.length+doneT,pT=totalT?(sesDone+doneT)/totalT:0;
